@@ -6,7 +6,7 @@
 #simm email: rachael.stjacques@dgs.virginia.gov
 #description: selects optimal reference genome given a set of fasta files
 #Requires: mash
-#Usage: python centroid.py Path_to_assemblies
+#Usage: python centroid.py /path/to/assemblies/
 
 import sys
 import glob
