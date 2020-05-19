@@ -3,7 +3,7 @@ tool to determine optimal refrerence genome given a set of fasta files
 
 ### Prerequisites
 
-What things you need to run centroid.py
+What dependencies you need to run centroid.py
 
 ```
 python3.6+
@@ -12,7 +12,7 @@ Mash
 
 ### Installing Dependencies
 
-Installing python3.7
+Installing python3.6+
 First, check your version of python
 
 ```
