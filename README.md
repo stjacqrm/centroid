@@ -47,6 +47,15 @@ To get centroid, clone this repository:
 $ git clone https://github.com/stjacqrm/centroid.git
 ```
 
+### Running centroid
+
+To run centroid:
+
+```
+$ ./centroid.py /path/to/assemblies/
+```
+
+
 ## Authors
 
 This script was originally written by Richard Stanton. I just made incredibly minor modifications for it to run using python3.6+ and to produce an output file as well as printing to the command line.
