@@ -1,6 +1,8 @@
 # centroid
 tool to determine optimal refrerence genome given a set of fasta files
 
+## Getting Started
+
 ### Prerequisites
 
 What dependencies you need to run centroid.py
@@ -61,8 +63,6 @@ $ ./centroid.py /path/to/assemblies/
 This script was originally written by Richard Stanton. I just made incredibly minor modifications for it to run using python3.6+ and to produce an output file as well as printing to the command line.
 
 
-Actual author:
-* **Richard Stanton** 
+* **Richard Stanton** - *Actual author*
 
-Modifier:
-* **Rachael St. Jacques** - *Me* - [stjacqrm](https://github.com/stjacqrm)
+* **Rachael St. Jacques** - *Modifier and host for code* - [stjacqrm](https://github.com/stjacqrm)
