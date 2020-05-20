@@ -64,7 +64,7 @@ $ ./centroid.py /path/to/assemblies/
 To run centroid if you're using the docker container:
 
 ```
-$  docker run --rm=True -u $(id -u):$(id -g) -v $PWD:/data centroid centroid.py assemblies/
+$  docker run --rm=True -u $(id -u):$(id -g) -v $PWD:/data staphb/centroid centroid.py assemblies/
 ```
 
 ## Authors
