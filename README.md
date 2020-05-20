@@ -49,14 +49,23 @@ To get centroid, clone this repository:
 $ git clone https://github.com/stjacqrm/centroid.git
 ```
 
+There's also a containerized version on [dockerhub](https://hub.docker.com/r/staphb/centroid). 
+If you go this route, you won't have to worry about having the dependencies installed (just docker). 
+
+
 ### Running centroid
 
-To run centroid:
+To run centroid if you cloned the repository:
 
 ```
 $ ./centroid.py /path/to/assemblies/
 ```
 
+To run centroid if you're using the docker container:
+
+```
+$  docker run --rm=True -u $(id -u):$(id -g) -v $PWD:/data centroid centroid.py assemblies/
+```
 
 ## Authors
 
