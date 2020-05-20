@@ -75,4 +75,5 @@ Folder = sys.argv[1]
 Assembly_List = glob.glob(Folder + '/*.fasta')
 Centroid = Mash_Centroid(Assembly_List)
 print(Centroid)
-print(Centroid, file=open("centroid_out.txt", "w"))
+ref_genome = Centroid.decode().rsplit('/',1)[1]
+print(ref_genome, file=open("centroid_out.txt", "w"))
