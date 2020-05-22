@@ -12,9 +12,13 @@ import sys
 import glob
 import numpy
 import operator
+import os
 from operator import itemgetter
 import subprocess
 
+sys.path.append(os.path.abspath(os.path.dirname(__file__) + '/' + '../..'))
+
+import fileparser
 
 def Average_Mash(input_mash_list):
     """Takes in a Mash_List (made using Mash_List) and then makes a list with the average value for each entry"""
@@ -54,6 +58,23 @@ def Mash_List_Maker(input_assembly_list):
             Output.append(String1)
     Output.sort()
     return Output
+
+def Mash_Sketch_Maker(input_read_dir):
+    """Sketches read data"""
+    Output = []
+    print(input_read_dir)
+    runfiles = fileparser.ProcessFastqs(input_read_dir, output_dir=input_read_dir)
+    reads_dict = runfiles.id_dict()
+    sketch_dir = os.path.join(os.getcwd(), "mash_sketches")
+    if not os.path.exists(sketch_dir):
+        os.mkdir(sketch_dir)
+    for id in reads_dict:
+        # capture read file and path names
+        fwd_read = reads_dict[id].fwd
+        rev_read = reads_dict[id].rev
+        String1 = subprocess.check_output(f"mash sketch -r -m 2 -o {sketch_dir}/{id} {fwd_read} {rev_read}", shell=True)
+        Output.append(f"{sketch_dir}/{id}.msh")
+    return(Output)
 
 def Mash_Centroid(input_assembly_list):
     """Returns the name of the fasta with the lowest average mash index"""
