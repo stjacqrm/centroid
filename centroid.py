@@ -15,17 +15,6 @@ import operator
 from operator import itemgetter
 import subprocess
 
-def Mash_List(Mash_Index):
-    """Takes in an index of Mash files and makes a list of the info from each"""
-    List1 = glob.glob(Mash_Index)
-    Combined = []
-    for files in List1:
-        f = open(files, 'r')
-        String1 = f.readline()
-        Combined.append(String1)
-        f.close()
-    Combined.sort()
-    return Combined
 
 def Average_Mash(input_mash_list):
     """Takes in a Mash_List (made using Mash_List) and then makes a list with the average value for each entry"""
