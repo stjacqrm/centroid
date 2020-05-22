@@ -72,6 +72,6 @@ $  docker run --rm=True -u $(id -u):$(id -g) -v $PWD:/data staphb/centroid centr
 This script was originally written by Richard Stanton. I just made incredibly minor modifications for it to run using python3.6+ and to produce an output file as well as printing to the command line.
 
 
-* **Richard Stanton** - *Actual author*
+* **Richard Stanton** - *Actual author* - [rastanton](https://github.com/rastanton)
 
 * **Rachael St. Jacques** - *Modifier and host for code* - [stjacqrm](https://github.com/stjacqrm)
