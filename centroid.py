@@ -62,6 +62,10 @@ def Mash_List_Maker(input_assembly_list):
             String1 = subprocess.check_output('mash dist ' + files + ' ' + files2, shell=True)
             Output.append(String1)
     Output.sort()
+    # write TSV to file
+    with open("mash-results.tsv", 'w', newline='') as tsvfile:
+        for item in Output:
+            tsvfile.write(item.decode("utf-8"))
     return Output
 
 def Mash_Centroid(input_assembly_list):
