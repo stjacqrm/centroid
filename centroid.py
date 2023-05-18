@@ -8,12 +8,14 @@
 #Requires: mash
 #Usage: python centroid.py /path/to/assemblies/
 
+VERSION = "0.1.0"
 import sys
 import glob
 import numpy
 import operator
 from operator import itemgetter
 import subprocess
+import argparse
 
 def Mash_List(Mash_Index):
     """Takes in an index of Mash files and makes a list of the info from each"""
@@ -75,7 +77,18 @@ def Mash_Centroid(input_assembly_list):
     Best = Averages[0][0]
     return Best
 
-Folder = sys.argv[1]
+
+parser = argparse.ArgumentParser(
+    description = '''Selects optimal reference genome given a set of fasta files''',
+    usage = 'centroid.py [options] /path/to/fasta_files/',
+    formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    
+parser.add_argument('folder',  help='Folder containing *.fasta files', type=str)
+parser.add_argument('--version', action='version', version=str(VERSION))
+options = parser.parse_args()
+
+
+Folder = options.folder
 Assembly_List = glob.glob(Folder + '/*.fasta')
 Centroid = Mash_Centroid(Assembly_List)
 print(Centroid)
